@@ -3,11 +3,11 @@
     <%= link_to 'New Cocktail', new_cocktail_path, class:"btn btn-success" %>
 </div>
 
-<div class="row mb-2">
+<div class="row">
   <% @cocktails.each do |cocktail|  %>
-    <div class="col-3">
-      <div class="card mb-6 text-center">
-        <%= link_to cocktail.name , cocktail %>
+    <div class="col-4">
+      <div class="card text-center mb-4">
+        <p>  <%= link_to cocktail.name , cocktail %> </p>
       </div>
     </div>
   <% end %>
