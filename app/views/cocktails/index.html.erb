@@ -7,7 +7,8 @@
   <% @cocktails.each do |cocktail|  %>
     <div class="col-4">
       <div class="card text-center mb-4">
-        <p>  <%= link_to cocktail.name , cocktail %> </p>
+        <%= cl_image_tag cocktail.photo, height: 200, width: 300, class: "card-img-top" %>
+        <p class="text-size:14">  <%= link_to cocktail.name , cocktail %> </p>
       </div>
     </div>
   <% end %>

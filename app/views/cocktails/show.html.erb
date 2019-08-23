@@ -1,26 +1,24 @@
 <div class="row justify-content-between m-1 mb-4">
 <h1><%= @cocktail.name %></h1>
-<%= link_to '<< Back to Index', cocktails_path, class:"btn btn-primary" %>
+  <%= link_to '<< Back to Index', cocktails_path, class:"btn btn-primary" %>
 </div>
+
+<%= cl_image_tag @cocktail.photo, height: 200, width: 300, crop: :fill %>
 
 <div class="row justify-content-between m-1 mb-2">
 <h3>List of Ingredients</h3>
 <%= link_to '>Add ingredient', new_cocktail_dose_path(@cocktail), class:"btn btn-success" %>
 </div>
 
-<div class="row mb-10">
-  <% @cocktail.doses.each do |dose| %>
-    <div class="col-4 mb-2">
-      <div class="card text-center">
-        <div class="row justify-content-between m-1">
-          <%= dose.description %> of <%= dose.ingredient.name %>
-          <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %>
-        </div>
+<% @cocktail.doses.each do |dose| %>
+  <div class="col-4 mb-2">
+    <div class="card text-center">
+      <div class="row justify-content-between m-1">
+        <%= dose.description %> of <%= dose.ingredient.name %>
+        <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %>
       </div>
     </div>
-  <% end %>
-</div>
-
-
+  </div>
+<% end %>
 
 
